@@ -1,38 +1,211 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: 'LeagueSpartan-Bold';
+    src: url('./static/LeagueSpartan-Bold.ttf');
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: 'LeagueSpartan-Medium';
+    src: url('./static/LeagueSpartan-Medium.ttf');
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+    font-family: 'LeagueSpartan-Regular';
+    src: url('./static/LeagueSpartan-Regular.ttf');
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+*, ::before, ::after {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+    min-width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#backdrop {
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/bg-pattern-top-mobile.svg'), url('./images/bg-pattern-bottom-mobile.svg');
+    background-position: top, bottom;
+    background-repeat: no-repeat, no-repeat;
+    padding: 25px;
+}
+
+/* Title section */
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30px 0;
+}
+
+#title {
+    font-size: 40px;
+    font-family: 'LeagueSpartan-Bold';
+    line-height: 32px;
+    color: hsl(300, 43%, 22%);
+    margin: 20px 0;
+}
+
+#description {
+    font-size: 18px;
+    font-family: 'LeagueSpartan-Medium';
+    line-height: 22px;
+    color: hsl(303, 10%, 53%);
+}
+
+/* Rating section */
+#rating-container {
+    margin: 40px 0;
+}
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(300, 24%, 96%);
+    border-radius: 5px;
+    margin: 15px 0;
+    padding: 15px;
+    height: 75px;
+}
+
+.star {
+    margin: 5px 5px 10px 0;
+}
+
+.rating-name {
+    font-size: 18px;
+    font-family: 'LeagueSpartan-Bold';
+    color: hsl(300, 43%, 22%);
+}
+
+/* Review section */
+#review-container {
+    margin: 20px 0 80px 0;
+}
+
+.review {
+    background-color: hsl(300, 43%, 22%);
+    color: #fff;
+    font-size: 15px;
+    font-family: 'LeagueSpartan-Regular';
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 40px 35px;
+    height: 250px;
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    font-family: 'LeagueSpartan-Medium';
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.buyer {
+    color: hsla(333, 80%, 67%, 0.75);
+    margin-top: 5px;
+}
+
+.review-text {
+    line-height: 20px;
+    font-size: 16px;
+}
+
+@media screen and (min-width: 1000px) {
+    #backdrop {
+        max-height: 100vh;
+        padding: 120px 150px;
+        background-image: url('./images/bg-pattern-top-desktop.svg'), url('./images/bg-pattern-bottom-desktop.svg');
+        background-position: top left, bottom right;
+        background-repeat: no-repeat, no-repeat;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    /* Title section */
+    #info {
+        justify-content: left;
+        text-align: left;
+        margin: 0;
+        width: 425px;
+    }
+
+    #title {
+        font-size: 60px;
+        line-height: 55px;
+        margin: 0;
+    }
+
+    #description {
+        margin: 30px 0;
+    }
+
+    /* Rating section */
+    #rating-container {
+        width: 550px;
+        height: 200px;
+        margin: 20px 0;
+    }
+
+    .rating {
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        column-gap: 30px;
+        height: 60px;
+        width: 450px;
+        padding: 20px;
+    }
+
+    .star {
+        margin: 0 5px;
+    }
+
+    #middle-rating {
+        margin-left: 50px;
+    }
+
+    #bottom-rating {
+        margin-left: 100px;
+    }
+
+    /* Review section */
+    #review-container {
+        grid-column: 1 / 3;
+        width: 1150px;
+        height: 275px;
+        margin: 40px 0;
+        display: flex;
+    }
+
+    .review {
+        width: 350px;
+        height: 230px;
+        margin: 0 30px 0 0;
+    }
+
+    #middle-review {
+        margin-top: 15px;
+    }
+
+    #bottom-review {
+        margin-top: 30px;
+    }
 }
